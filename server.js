@@ -42,7 +42,30 @@ app.use(express.static("public"));
 
 //Render the homepage
 app.get("/",function(req,res,next) {
-    database.ref().child("Potholes").get().then(function(snapshot){
+
+    //DB request to get all potholes where treated==false
+   
+    //.on("value") runs on page load, returns all children
+    database.ref("Potholes").orderByChild("treated").equalTo("false").on("value", function(snapshot){
+        
+        if (snapshot.exists()){
+            // console.log(snapshot.val());
+            var rows = snapshot.val();
+    
+            for(const[key, value] of Object.entries(rows)){
+                rows[key]["pothole_id"] = key; //Adds entry to each pothole with pothole_id: "Pothole_123"
+            }
+            //console.log("ROWS: " + JSON.stringify(rows));
+            
+            //Render table in index.handlebars with just treated potholes
+            res.status(200).render("index", {
+                results: rows
+            });
+        } else{
+            res.status(200).render("index");
+        }
+    });
+    /*database.ref().child("Potholes").get().then(function(snapshot){
         if(snapshot.exists()){
             //console.log(snapshot.val()); //prints json representation of db
             
@@ -52,7 +75,7 @@ app.get("/",function(req,res,next) {
                 rows[key]["pothole_id"] = key; //Adds entry to each pothole with pothole_id: "Pothole_123"
             }
 
-            //console.log(rows);
+            console.log(rows);
 
             res.status(200).render("index", {
                 results: rows //Sends all data to index.handlebars which renders each row using maintablerow.handlebars
@@ -68,7 +91,7 @@ app.get("/",function(req,res,next) {
 
     console.log("hello world");
     //res.status(200).send("hello world");
-    //res.status(200).render("index");
+    //res.status(200).render("index");*/
 
 });
 
@@ -76,16 +99,41 @@ app.get("/treated_potholes", function(req, res, next){
     console.log("Running app.get('/treated_potholes')");
     //DB request to get all potholes where treated==True
    
-    database.ref().child("Potholes")
-    .orderByChild("treated")
-    .equalTo("true")
-    .on("child_added", function(snapshot) {
-        console.log("something is happening");
-       console.log(snapshot.val());
-     });
+    //.on("value") runs on page load, returns all children
+    database.ref("Potholes").orderByChild("treated").equalTo("true").on("value", function(snapshot){
+       // console.log(snapshot.val());
+        var rows = snapshot.val();
 
-    //Render table in index.handlebars with just treated potholes
-    res.status(200).render("index")
+        for(const[key, value] of Object.entries(rows)){
+            rows[key]["pothole_id"] = key; //Adds entry to each pothole with pothole_id: "Pothole_123"
+        }
+        //console.log("ROWS: " + JSON.stringify(rows));
+        
+        //Render table in index.handlebars with just treated potholes
+        res.status(200).render("index", {
+            results: rows
+        });
+    });
+   
+    /*
+    EVENTUALLY YOU WILL WANT TO OPTIMIZE BY USING THESE INSTEAD OF .on("value"), 
+    BE SURE TO CHANGE THIS FOR ACTIVE POTHOLES AS WELL, 
+    reference https://www.softauthor.com/firebase-querying-sorting-filtering-database-with-nodejs-client/#querying-data-using-firebase-events
+
+    //.on("child_added") runs on page load and anytime child is added, returns only newly added children
+    database.ref().on("child_added", function(snapshot){
+        //console.log(snapshot.key); LISTS POTHOLE NAMES
+        //console.log(snapshot.val()); LISTS POTHOLES AND THEIR DATA
+    });
+
+    //.on("child_changed") runs only when a child is changed, returns only changed child
+    database.ref().on("child_changed", function(snapshot){
+    });
+
+    //.on("child_removed") runs when a child is removed, returns the deleted child
+    database.ref().on("child_removed", function(snapshot){
+    });*/
+
 });
 
 //Render the treatment data page

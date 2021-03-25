@@ -1,0 +1,113 @@
+body {
+    background-color: #CDD2E3;
+
+}
+
+.material-icons {
+    vertical-align: middle;
+    
+}
+
+.material-icons:hover {
+    color: #5e7f80;
+}
+
+.container{
+    width: 98%;
+    height: fit-content;
+    text-align: center;
+    margin: auto;
+}
+
+.title{
+    width: 100%;
+    height:fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #3d435c;
+    color: #e7e6e6;
+    font-family: Verdana;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.title_desc{
+    height: fit-content;
+    width: 75%;
+    text-align: center;
+    padding-left: 12.5%;
+}
+
+.navbar{
+    background-color: #3d435c;
+    height: 80px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+#activepotholes, #treatedpotholes{
+    width: 50%;
+    height: 80px;
+    display: inline;
+    font-family: Verdana;
+    color: #e7e6e6;
+    float: left;
+}
+
+#treatedpotholes{
+    border-radius: 0 15px 15px 0;
+}
+
+#activepotholes{
+    border-radius: 15px 0 0 15px;
+}
+
+#activepotholes:hover, #treatedpotholes:hover{
+    background-color: #5e7f80;
+}
+
+h2{
+    font-family: Verdana;
+    text-align: center; 
+}
+
+table{
+    width: fit-content;
+    height: fit-content;
+    /*display: inline-block;*/
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    font-family: Verdana;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+th, td{
+    border: none;
+    padding: 20px 30px 20px 30px;
+    text-align: center;
+    
+}
+
+th {
+    background-color: #3d435c;
+    color: #e7e6e6;
+
+}
+
+tr:nth-child(even) {
+    background-color:#e7e6e6;
+}
+
+tr:nth-child(odd) {
+    background-color:#abb1c7;
+}
+
+#edittreatmentoldvals{
+    color: gray;
+    font-weight: bold;
+    padding-top: 50px;
+}

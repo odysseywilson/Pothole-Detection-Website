@@ -1,0 +1,19 @@
+    <div class="maintable">
+        <table id="maintable">
+            <tr>
+                <th>Date <sub id="sort_date" class="material-icons">arrow_drop_down</sub></th>
+                <th>Time <sub id="sort_time" class="material-icons">arrow_drop_down</sub></th>
+                <th>Severity <sub id="sort_severity" class="material-icons">arrow_drop_down</sub></th>
+                <th># Reports <sub id="sort_num_reports" class="material-icons">arrow_drop_down</sub></th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Highway <sub id="sort_highway" class="material-icons">arrow_drop_down</sub></th>
+                <th>Treated? <sub id="sort_treated" class="material-icons">arrow_drop_down</sub></th>
+
+
+            </tr>
+
+            {{#each results}}
+                {{>maintablerow}}
+            {{/each}}
+        </table>

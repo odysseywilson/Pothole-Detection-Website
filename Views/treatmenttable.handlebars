@@ -1,0 +1,35 @@
+<h1 class="title">Treatment Info</h1>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Severity</th>
+        <th># Reports</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Highway</th>
+        <th>Treated?</th>
+
+
+    </tr>
+
+    {{>maintablerowtreatment results}}
+
+</table>
+
+<table>
+    <tr>
+        <th>Treated?</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Weather</th>
+        <th>Temperature</th>
+        <th>Employee who Treated</th>
+        <th>Employee who Marked Resolved</th>
+        <th></th>
+    </tr>
+
+    {{>treatmenttablerow results}}
+
+</table>

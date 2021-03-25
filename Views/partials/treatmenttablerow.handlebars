@@ -1,0 +1,43 @@
+<tr>
+    <td>{{treated}}</td>
+
+    {{#if treat_date}}
+        <td>{{treat_date}}</td>
+    {{else}}
+        <td> - </td>
+    {{/if}}
+
+    {{#if treat_time}}
+        <td>{{treat_time}}</td>
+    {{else}}
+        <td> - </td>
+    {{/if}}
+
+    {{#if treat_weather}}
+        <td>{{treat_weather}}</td>
+    {{else}}
+        <td> - </td>
+    {{/if}}
+
+    {{#if treat_temp}}
+        <td>{{treat_temp}}</td>
+    {{else}}
+        <td> - </td>
+    {{/if}}
+
+    {{#if emp_id_app}}
+        <td>{{emp_id_app}}</td>
+    {{else}}
+        <td> - </td>
+    {{/if}}
+
+    {{#if emp_id_website}}
+        <td>{{emp_id_website}}</td>
+    {{else}}
+        <td> - </td>
+    {{/if}}
+
+    <td><i id="edit_treatment" class="material-icons" onClick="window.location='/edit_treatment?id={{pothole_id}}';">edit</i></td>
+
+    
+</tr>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="title">
+        <h1>Pothole Detection</h1>
+        <p class="title_desc"> Below is every recorded pothole from the Pothole Detection iOS app</br></br>
+            Use the filters to specify the data and order you wish to see</br></br>
+            Click treatment data to see or edit information reguarding treatment for 
+            the specified pothole</p>
+        </p>
+    </div>
+
+    <div class="navbar">
+        <div id="activepotholes">
+            <h1>Active Potholes</h1>
+        </div>
+
+        <div id="treatedpotholes">
+            <h1>Treated Potholes</h1>
+        </div>
+    </div>
+
+    <div class="maintable">
+        <table id="maintable">
+            <tr>
+                <th>Date <sub id="sort_date" class="material-icons">arrow_drop_down</sub></th>
+                <th>Time <sub id="sort_time" class="material-icons">arrow_drop_down</sub></th>
+                <th>Severity <sub id="sort_severity" class="material-icons">arrow_drop_down</sub></th>
+                <th># Reports <sub id="sort_num_reports" class="material-icons">arrow_drop_down</sub></th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Highway <sub id="sort_highway" class="material-icons">arrow_drop_down</sub></th>
+                <th>Treated?</th>
+
+
+            </tr>
+
+            {{#each results}}
+                {{>maintablerow}}
+            {{/each}}
+        </table>
+    </div>
+</div>

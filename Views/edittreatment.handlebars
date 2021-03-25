@@ -1,0 +1,77 @@
+<h1 class="title">Treatment Info</h1>
+
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Severity</th>
+        <th># Reports</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Highway</th>
+        <th>Treated?</th>
+
+
+    </tr>
+    
+    {{>maintablerowtreatment results}}
+
+</table>
+
+<table>
+    <tr>
+        <th>Treated?</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Weather</th>
+        <th>Temperature</th>
+        <th>Employee who Treated</th>
+        <th>Employee who Marked Resolved</th>
+        <th></th>
+    </tr>
+    <tr id="edittreatmentoldvals">
+            <td>
+                ({{results.treated}})<br><br>
+                <select id="edittreated">
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+            </td>
+
+            <td>
+                ({{results.treat_date}})<br><br>
+                <input type="date" id="edittreatdate">
+            </td>
+
+            <td>
+                ({{results.treat_time}})<br><br>
+                <input type="time" id="edittreattime">
+            </td>
+
+            <td>
+                ({{results.treat_weather}})<br><br>
+                <input type="text" id="edittreatweather">
+            </td>
+
+            <td>
+                ({{results.treat_temp}})<br><br>
+                <input type="text" id="edittreattemp">
+            </td>
+
+            <td>
+                ({{results.emp_id_website}})<br><br>
+                <input type="text" id="edittreatempweb">
+            </td>
+                        
+            <td>
+                ({{results.emp_id_app}})<br><br>
+                <input type="text" id="edittreatempapp">
+            </td>
+
+            <td>
+                <button id="submittreatchanges">Sumbit changes</button>
+            </td>
+    </tr>
+
+</table>

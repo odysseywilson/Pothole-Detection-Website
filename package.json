@@ -1,0 +1,27 @@
+{
+  "name": "pothole-detection-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "firebase": "^8.2.9",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odysseywilson/Pothole-Detection-Website.git"
+  },
+  "author": "Odyssey Wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/odysseywilson/Pothole-Detection-Website/issues"
+  },
+  "homepage": "https://github.com/odysseywilson/Pothole-Detection-Website#readme"
+}

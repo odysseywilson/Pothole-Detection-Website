@@ -45,7 +45,6 @@ $(document).ready(function(){
         else {
             const queryString = window.location.search;
             const params = new URLSearchParams(queryString);
-            alert(params.get('filter'));
             filter = params.get('filter');
         }
 
@@ -68,13 +67,11 @@ $(document).ready(function(){
         var filter;
         var urlEnd = window.location.href.split("http://localhost:3000/")[1];
         if (urlEnd == "all_potholes" || urlEnd == "treated_potholes" || urlEnd == "active_potholes"){
-            alert(urlEnd);
             filter = urlEnd;
         }
         else {
             const queryString = window.location.search;
             const params = new URLSearchParams(queryString);
-            alert(params.get('filter'));
             filter = params.get('filter');
         }
         window.location.replace("/sort?by=num_reports&filter=" + filter);
@@ -83,13 +80,11 @@ $(document).ready(function(){
         var filter;
         var urlEnd = window.location.href.split("http://localhost:3000/")[1];
         if (urlEnd == "all_potholes" || urlEnd == "treated_potholes" || urlEnd == "active_potholes"){
-            alert(urlEnd);
             filter = urlEnd;
         }
         else {
             const queryString = window.location.search;
             const params = new URLSearchParams(queryString);
-            alert(params.get('filter'));
             filter = params.get('filter');
         }
         window.location.replace("/sort?by=highway&filter=" + filter);

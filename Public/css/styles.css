@@ -46,8 +46,8 @@ body {
     margin-bottom: 20px;
 }
 
-#activepotholes, #treatedpotholes{
-    width: 50%;
+#activepotholes, #treatedpotholes, #allpotholes{
+    width: 33.33334%;
     height: 80px;
     display: inline;
     font-family: Verdana;
@@ -59,11 +59,11 @@ body {
     border-radius: 0 15px 15px 0;
 }
 
-#activepotholes{
+#allpotholes{
     border-radius: 15px 0 0 15px;
 }
 
-#activepotholes:hover, #treatedpotholes:hover{
+#activepotholes:hover, #treatedpotholes:hover, #allpotholes:hover{
     background-color: #5e7f80;
 }
 

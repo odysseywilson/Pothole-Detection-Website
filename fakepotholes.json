@@ -1,0 +1,95 @@
+{
+    "Pothole_1" : {
+    "Timestamp" : "2020-12-29 09:23:01",
+    "emp_id_app" : "392748",
+    "emp_id_website" : "",
+    "highway" : "i5 north",
+    "latitude" : 44.695265,
+    "longitude" : -123.052368,
+    "num_reports" : 4,
+    "number" : 1,
+    "severity" : 4,
+    "treat_date" : "2021-01-02",
+    "treat_precip" : 0.7,
+    "treat_temp" : "47",
+    "treat_time" : "13:27",
+    "treat_weather" : "cloudy",
+    "treated" : "true"
+  },
+  "Pothole_2" : {
+    "Timestamp" : "2021-02-12 14:29:45",
+    "highway" : "i5 north",
+    "latitude" : 44.908695,
+    "longitude" : -122.985077,
+    "num_reports" : 2,
+    "number" : 2,
+    "severity" : 1,
+    "treated" : "false"
+  },
+  "Pothole_3" : {
+    "Timestamp" : "2021-03-04 20:11:45",
+    "emp_id_app" : "",
+    "emp_id_website" : "483906",
+    "highway" : "i84 east",
+    "latitude" : 45.535217,
+    "longitude" : -122.628483,
+    "num_reports" : 15,
+    "number" : 3,
+    "severity" : 3,
+    "treat_date" : "2021-01-02",
+    "treat_precip" : 0.3,
+    "treat_temp" : "61",
+    "treat_time" : "11:16",
+    "treat_weather" : "sunny",
+    "treated" : "true"
+  },
+  "Pothole_4" : {
+    "Timestamp" : "2021-03-28 18:19:57",
+    "highway" : "OR 99 west",
+    "latitude" : 45.345985,
+    "longitude" : -122.871094,
+    "num_reports" : 4,
+    "number" : 4,
+    "severity" : 2,
+    "treated" : "false"
+  },
+  "Pothole_5" : {
+    "Timestamp" : "2021-04-12 18:53:39",
+    "highway" : "i205 south",
+    "latitude" : 45.490464,
+    "longitude" : -122.565578,
+    "num_reports" : 4,
+    "number" : 5,
+    "severity" : 5,
+    "treated" : "false"
+  },
+  "Pothole_6" : {
+    "Timestamp" : "2021-04-17 23:11:46",
+    "highway" : "i205 south",
+    "latitude" : 45.421720,
+    "longitude" : -122.571901,
+    "num_reports" : 3,
+    "number" : 6,
+    "severity" : 2,
+    "treated" : "false"
+  },
+  "Pothole_7" : {
+    "Timestamp" : "2021-04-23 20:53:13",
+    "highway" : "i205 north",
+    "latitude" : 45.547957,
+    "longitude" : -122.560262,
+    "num_reports" : 4,
+    "number" : 7,
+    "severity" : 3,
+    "treated" : "false"
+  },
+  "Pothole_8" : {
+    "Timestamp" : "2021-04-23 20:53:13",
+    "latitude" : 44.571714,
+    "longitude" : -123.289813,
+    "num_reports" : 6,
+    "number" : 8,
+    "severity" : 3,
+    "treated" : "false"
+  }
+}

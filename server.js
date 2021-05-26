@@ -6,7 +6,7 @@ var firebase = require("firebase/app");
 require("firebase/database");
 
  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
     apiKey: "AIzaSyAey2VZLt7C2Qxy07wi1NkNLCS-HamzL7w",
     authDomain: "pothole-app-7b5fc.firebaseapp.com",
@@ -272,7 +272,6 @@ function sortFilteredPotholeList(sortBy, filter, res){
             filteredPotholeArray.sort(function(a,b){
                 const aDefined = typeof a.highway !== 'undefined';
                 const bDefined = typeof b.highway !== 'undefined';
-                console.log("A: " + a.highway + "B: " + b.highway);
                 //Returns the first one that can be converted to true, otherwise returns 0 to the sort function
                 return (bDefined - aDefined) || (aDefined === true && a.highway.localeCompare(b.highway, 'en', { numeric: true }) || 0);
             });
@@ -337,6 +336,7 @@ app.post("/edit_treatment", function(req,res,next){
     var updates = {
         treated: data.treated,
         treat_date: data.date,
+        treat_time: data.time,
         treat_weather: data.weather,
         treat_temp: data.temp,
         emp_id_website: data.empWeb,
@@ -348,19 +348,15 @@ app.post("/edit_treatment", function(req,res,next){
             console.log("ERROR in server.js: Could not make changes to database" + error);
         }
         else{
-            console.log("Should be rendering treatment table");
-            res.status(200).render("treatmenttable", {
-                results: database.ref().child("Potholes").child(data.potholeID).get()
+            res.status(200).send( 
+            {
+                potholeID: req.body.potholeID
             });
         }
     });
 
 });
 
-/*app.get("/test",function(req,res,next){
-    console.log("Server was called, rendering localhost:3000/test");
-    res.status(200).render("treatmenttable");
-});*/
 
 app.get("/submit-pothole-treatment", function(req,res,next){
     /*When you want to get data out of the URL from a GET request do this:
@@ -379,13 +375,6 @@ app.get("/submit-pothole-treatment", function(req,res,next){
         })
         */
 });
-
-/*app.get("/test",function(req,res,next) {
-        firebase.database().ref('Potholes/Pothole_32').set({
-          longitude: "20.0",
-          latitude: "30.0"
-        });
-});*/
 
 var server = app.listen(port, function(){
     console.log("Started server on port" + port)

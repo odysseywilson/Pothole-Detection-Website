@@ -2,7 +2,7 @@
 This is the website interface for ODOT employees to access data from potholes that were detected by the pothole detection iOS app (github.com/cade-conklin/Pothole-Detection)
 
 ## Installation
-I included the node_modules in my commit so you shouldn't need to install anything, simply clone the repository to your machine. If you have issues with dependencies, delete the node_modules folder and run: 
+Start by simply cloning the repository to your machine. Then run
 ``` bash
 npm install
 ```
